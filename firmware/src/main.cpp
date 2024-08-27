@@ -10,7 +10,7 @@
 
 // i2s config for using the internal ADC
 i2s_config_t adcI2SConfig = {
-    .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX | I2S_MODE_ADC_BUILT_IN),
+    .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX ),
     .sample_rate = 16000,
     .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT,
     .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,
@@ -67,7 +67,7 @@ void setup()
   Serial.println("Starting up");
 
   // make sure we don't get killed for our long running tasks
-  esp_task_wdt_init(10, false);
+  esp_task_wdt_init(20, false);
 
   // start up the I2S input (from either an I2S microphone or Analogue microphone via the ADC)
 #ifdef USE_I2S_MIC_INPUT
