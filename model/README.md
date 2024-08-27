@@ -1,6 +1,3 @@
-# Voice-controlled robot model
-
-This folder contains the Jupyter notebooks for creating the training data, training the model, and exporting the model to TensorFlow Lite.
 
 ## Setup
 
