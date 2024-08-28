@@ -1,6 +1,6 @@
 # Voice Command Recognition Firmware
 
-This folder contains the firmware for the voice-controlled robot.
+This folder contains the firmware for the voice-recognition esp32s3.
 
 We are using Platform.io to build the firmware.
 
@@ -8,7 +8,6 @@ To understand the code the best place to start is `src/main.cpp`. This creates o
 
 From there you can look at `src/CommandDetector.cpp` and `src/CommandProcessor.cpp`.
 
-The code should be well commented and hopefully easy to understand.
 
 ## Config options
 
@@ -23,13 +22,6 @@ If you want to use an analog microphone instead of I2S then you need to comment 
 #define USE_I2S_MIC_INPUT
 ```
 
-And you will need to select the appropriate ADC channel to read data from:
-
-```
-// Analog Microphone Settings - ADC1_CHANNEL_7 is GPIO35
-#define ADC_MIC_CHANNEL ADC1_CHANNEL_7
-```
-
 If you are using an I2S Microphone then you need to tell the system which channel you have configure the microphone on (left or right - generally these devices default to left).
 
 ```
@@ -41,7 +33,7 @@ If you are using an I2S Microphone then you need to tell the system which channe
 And you will need to tell it which pins you have connected to the microphone:
 
 ```
-#define I2S_MIC_SERIAL_CLOCK GPIO_NUM_33
-#define I2S_MIC_LEFT_RIGHT_CLOCK GPIO_NUM_26
-#define I2S_MIC_SERIAL_DATA GPIO_NUM_25
+#define I2S_MIC_SERIAL_CLOCK GPIO_NUM_12
+#define I2S_MIC_LEFT_RIGHT_CLOCK GPIO_NUM_11
+#define I2S_MIC_SERIAL_DATA GPIO_NUM_10
 ```
